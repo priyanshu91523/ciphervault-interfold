@@ -3,148 +3,203 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CipherVault | Private Data Demo</title>
+
+  <title>CipherVault — Private Computation Playground</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<nav>
-  <div class="logo">⬡ CipherVault</div>
-  <div class="badge">Interfold E3 Demo</div>
-</nav>
+  <main class="container">
 
-<main>
-
-  <section class="hero">
-    <div class="eyebrow">PRIVATE COMPUTATION EXPLORER</div>
-
-    <h1>
-      Your data stays yours.
-      <span>Computation doesn't need to see it.</span>
-    </h1>
-
-    <p>
-      CipherVault is a simple prototype exploring how encrypted inputs
-      can move through a confidential computation workflow inspired by
-      The Interfold's E3 architecture.
-    </p>
-  </section>
-
-
-  <section class="vault-card">
-
-    <div class="card-header">
-      <div>
-        <h2>Transform Private Input</h2>
-        <p>Enter data that should remain confidential.</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="brand">
+        <div class="logo-mark">CV</div>
+        <div>
+          <h1>CipherVault</h1>
+          <span>PRIVATE COMPUTATION PLAYGROUND</span>
+        </div>
       </div>
 
-      <div class="status">● Ready</div>
-    </div>
+      <div class="system-status">
+        <span class="status-dot"></span>
+        SYSTEM READY
+      </div>
+    </nav>
 
-    <textarea
-      id="privateInput"
-      placeholder="Enter private data here..."
-    ></textarea>
 
-    <button id="encryptBtn">
-      Transform Input →
-    </button>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="eyebrow">CONFIDENTIAL COMPUTATION · E3 WORKFLOW</div>
 
-    <div id="result" class="result hidden">
+      <h2>
+        Your data enters.<br>
+        Your privacy stays.
+      </h2>
 
-      <div class="result-label">CRYPTOGRAPHIC OUTPUT</div>
+      <p>
+        CipherVault is an interactive prototype exploring how private inputs
+        can move through cryptographic transformation, encrypted execution
+        environments, and distributed Ciphernode coordination.
+      </p>
+    </section>
 
-      <div id="encryptedOutput" class="encrypted-box"></div>
 
+    <!-- Main Application -->
+    <section class="vault-card">
+
+      <div class="card-header">
+        <div>
+          <span class="section-label">01 / PRIVATE INPUT</span>
+          <h3>Secure Input Layer</h3>
+        </div>
+
+        <div class="ready-badge">
+          <span class="status-dot"></span>
+          READY
+        </div>
+      </div>
+
+
+      <textarea
+        id="privateInput"
+        placeholder="Enter confidential data..."
+        spellcheck="false"
+      ></textarea>
+
+
+      <button id="encryptBtn">
+        <span>PROTECT & TRANSFORM</span>
+        <span class="arrow">→</span>
+      </button>
+
+
+      <!-- Workflow -->
       <div class="workflow">
 
-        <div class="step active">
-          <span>1</span> Input
+        <div class="workflow-step active" id="step1">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <strong>Private Input</strong>
+            <span>Data captured locally</span>
+          </div>
         </div>
 
-        <div class="line"></div>
+        <div class="workflow-line"></div>
 
-        <div class="step active">
-          <span>2</span> Transform
+        <div class="workflow-step" id="step2">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <strong>Crypto Layer</strong>
+            <span>Input transformed</span>
+          </div>
         </div>
 
-        <div class="line"></div>
+        <div class="workflow-line"></div>
 
-        <div class="step">
-          <span>3</span> E3
+        <div class="workflow-step" id="step3">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <strong>E3 Environment</strong>
+            <span>Confidential execution</span>
+          </div>
         </div>
 
-        <div class="line"></div>
+        <div class="workflow-line"></div>
 
-        <div class="step">
-          <span>4</span> Ciphernodes
+        <div class="workflow-step" id="step4">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <strong>Ciphernodes</strong>
+            <span>Distributed coordination</span>
+          </div>
         </div>
 
       </div>
 
-    </div>
 
-  </section>
+      <!-- Result -->
+      <div id="result" class="result hidden">
 
+        <div class="result-header">
+          <span>PROTECTED OUTPUT</span>
+          <span id="resultStatus">PROCESSING</span>
+        </div>
 
-  <section class="architecture">
+        <div id="encryptedOutput" class="encrypted-output">
+          Waiting for secure transformation...
+        </div>
 
-    <div class="section-title">
-      <span>HOW IT WORKS</span>
-      <h2>A simplified confidential workflow</h2>
-    </div>
+        <p id="resultMessage">
+          Your input will be transformed locally before entering the workflow.
+        </p>
 
-    <div class="flow-grid">
-
-      <div class="flow-card">
-        <div class="number">01</div>
-        <h3>Private Input</h3>
-        <p>User data begins locally and remains protected from direct exposure.</p>
       </div>
 
-      <div class="flow-card">
-        <div class="number">02</div>
-        <h3>Cryptographic Transform</h3>
-        <p>The input is transformed locally before moving into a confidential workflow.</p>
+    </section>
+
+
+    <!-- Architecture Section -->
+    <section class="architecture">
+
+      <div class="architecture-header">
+        <span class="section-label">ARCHITECTURE</span>
+        <h3>How CipherVault Models Confidential Computation</h3>
       </div>
 
-      <div class="flow-card">
-        <div class="number">03</div>
-        <h3>Encrypted Execution</h3>
-        <p>An E3 can coordinate computation over protected inputs.</p>
+      <div class="architecture-grid">
+
+        <div class="architecture-card">
+          <span>01</span>
+          <h4>Local Privacy</h4>
+          <p>
+            Private data starts inside the user's browser and is never sent
+            anywhere by this prototype.
+          </p>
+        </div>
+
+        <div class="architecture-card">
+          <span>02</span>
+          <h4>Cryptographic Layer</h4>
+          <p>
+            Web Crypto APIs transform the input into a cryptographic output.
+          </p>
+        </div>
+
+        <div class="architecture-card">
+          <span>03</span>
+          <h4>E3 Workflow</h4>
+          <p>
+            The protected payload conceptually moves into an encrypted
+            execution environment for confidential computation.
+          </p>
+        </div>
+
+        <div class="architecture-card">
+          <span>04</span>
+          <h4>Ciphernodes</h4>
+          <p>
+            Distributed participants represent coordinated cryptographic
+            execution without relying on a single trusted party.
+          </p>
+        </div>
+
       </div>
 
-      <div class="flow-card">
-        <div class="number">04</div>
-        <h3>Ciphernodes</h3>
-        <p>Distributed nodes can participate in confidential cryptographic workflows.</p>
-      </div>
-
-    </div>
-
-  </section>
+    </section>
 
 
-  <section class="about">
-    <h2>Built for exploring private computation.</h2>
+    <!-- Footer -->
+    <footer>
+      <span>CIPHERVAULT / EXPERIMENTAL PROTOTYPE</span>
+      <span>EXPLORING CONFIDENTIAL COMPUTATION</span>
+    </footer>
 
-    <p>
-      CipherVault is an educational prototype inspired by The Interfold's
-      approach to confidential coordination and Encrypted Execution Environments.
-    </p>
-  </section>
+  </main>
 
-</main>
-
-
-<footer>
-  <div>CipherVault</div>
-  <div>Built for The Interfold ecosystem</div>
-</footer>
-
-<script src="app.js"></script>
+  <script src="app.js"></script>
 
 </body>
 </html>
